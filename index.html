@@ -215,13 +215,72 @@
                 </div>
                 
                 <div class="stack-visual-panel">
-                    <div class="stack-matrix-title">System Topology Mapping</div>
-                    <div class="matrix-graphic">
-                        <div class="matrix-core">COGNOS</div>
-                        <div class="matrix-orbit orbit-1"></div>
-                        <div class="matrix-orbit orbit-2"></div>
-                        <div class="matrix-orbit orbit-3"></div>
-                        <div class="matrix-orbit orbit-4"></div>
+                    <div class="stack-matrix-title">Metacognitive AI Framework (MAF)</div>
+                    <div class="maf-engine-container">
+                        <svg class="maf-svg" width="100%" height="100%" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Grid Alignment Guides (Blueprint style) -->
+                            <circle cx="200" cy="200" r="140" stroke="#1F293D" stroke-width="0.5" stroke-dasharray="4 4" />
+                            <circle cx="200" cy="200" r="90" stroke="#1F293D" stroke-width="0.5" stroke-dasharray="4 4" />
+                            <line x1="200" y1="30" x2="200" y2="370" stroke="#1F293D" stroke-width="0.5" stroke-dasharray="2 2" />
+                            <line x1="30" y1="200" x2="370" y2="200" stroke="#1F293D" stroke-width="0.5" stroke-dasharray="2 2" />
+
+                            <!-- Dynamic Laser Connection Paths (Self-Correcting Loops) -->
+                            <!-- L0 -> L1 Loop -->
+                            <path class="maf-loop-path loop-inner" d="M 200,110 A 90,90 0 1,1 199.9,110 Z" stroke="url(#cyanGlow)" stroke-width="2" stroke-linecap="round" />
+                            <!-- L1 -> L2 Loop -->
+                            <path class="maf-loop-path loop-outer" d="M 200,60 A 140,140 0 1,0 200.1,60 Z" stroke="url(#greenGlow)" stroke-width="1.5" stroke-dasharray="10 15" />
+
+                            <!-- Core Active Node (COGNOS Engine) -->
+                            <g class="maf-node core-node" transform="translate(200, 200)">
+                                <circle r="36" fill="#050811" stroke="#00FF66" stroke-width="2" class="pulse-ring" />
+                                <circle r="30" fill="url(#coreGradient)" />
+                                <text class="maf-text-core" y="4" text-anchor="middle" fill="#00FF66">COGNOS</text>
+                            </g>
+
+                            <!-- Node 1: Metacognitive Governor (Top) -->
+                            <g class="gov-node" transform="translate(200, 60)">
+                                <circle r="22" fill="#050811" stroke="#FF3E55" stroke-width="1.5" />
+                                <circle r="18" fill="rgba(255, 62, 85, 0.05)" />
+                                <text class="maf-text-node" y="4" text-anchor="middle" fill="#FF3E55">GOV</text>
+                            </g>
+
+                            <!-- Node 2: Auditable Logger / Ledger (Bottom Right) -->
+                            <g class="log-node" transform="translate(320, 270)">
+                                <circle r="22" fill="#050811" stroke="#00FF66" stroke-width="1.5" />
+                                <circle r="18" fill="rgba(0, 255, 102, 0.05)" />
+                                <text class="maf-text-node" y="4" text-anchor="middle" fill="#00FF66">LOG</text>
+                            </g>
+
+                            <!-- Node 3: Self-Correction Loop (Bottom Left) -->
+                            <g class="corr-node" transform="translate(80, 270)">
+                                <circle r="22" fill="#050811" stroke="#00F0FF" stroke-width="1.5" />
+                                <circle r="18" fill="rgba(0, 240, 255, 0.05)" />
+                                <text class="maf-text-node" y="4" text-anchor="middle" fill="#00F0FF">CORR</text>
+                            </g>
+
+                            <!-- Gradients & Glows Definition -->
+                            <defs>
+                                <radialGradient id="coreGradient" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#00FF66" stop-opacity="0.2"/>
+                                    <stop offset="100%" stop-color="#050811" stop-opacity="0.8"/>
+                                </radialGradient>
+                                <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.8"/>
+                                    <stop offset="100%" stop-color="#00FF66" stop-opacity="0.2"/>
+                                </linearGradient>
+                                <linearGradient id="greenGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#00FF66" stop-opacity="0.8"/>
+                                    <stop offset="100%" stop-color="#FF3E55" stop-opacity="0.2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+
+                        <!-- Floating Diagnostic Terminal overlay (Bottom) -->
+                        <div class="maf-diagnostics">
+                            <div class="diag-line"><span class="diag-tag cyan">[MAF_MONITOR]</span> STATE: ACTIVE_REASONING</div>
+                            <div class="diag-line"><span class="diag-tag green">[SELF_AUDIT]</span> ANOMALIES: 0.00% // NO_DRIFT</div>
+                            <div class="diag-line"><span class="diag-tag red">[GOVERNANCE]</span> SHIELD: ARMED // LAW_COMPLIANT</div>
+                        </div>
                     </div>
                 </div>
             </div>

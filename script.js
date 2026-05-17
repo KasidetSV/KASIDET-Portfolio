@@ -101,6 +101,17 @@ document.addEventListener('DOMContentLoaded', () => {
             
             activeSessionsElement.textContent = `${loadVal} ACTIVE`;
             efficiencyElement.textContent = `${efficiencyVal}%`;
+
+            // Live diagnostics updates for MAF self-correcting neural engine
+            const diagLines = document.querySelectorAll('.maf-diagnostics .diag-line');
+            if (diagLines.length >= 3) {
+                const states = ['ACTIVE_REASONING', 'SELF_CORRECTING', 'AUDIT_TRACE', 'SHIELD_SECURED'];
+                const stateVal = states[Math.floor(Math.random() * states.length)];
+                const anomalyVal = (Math.random() * 0.03).toFixed(2);
+                
+                diagLines[0].innerHTML = `<span class="diag-tag cyan">[MAF_MONITOR]</span> STATE: ${stateVal}`;
+                diagLines[1].innerHTML = `<span class="diag-tag green">[SELF_AUDIT]</span> ANOMALIES: ${anomalyVal}% // NO_DRIFT`;
+            }
         }, 8000);
     }
 
