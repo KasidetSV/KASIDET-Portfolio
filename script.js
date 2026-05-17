@@ -135,4 +135,30 @@ document.addEventListener('DOMContentLoaded', () => {
     sectionLines.forEach(line => {
         observer.observe(line);
     });
+
+    // 5. Timeline Nodes Animation
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineProgress = document.getElementById('timeline-progress');
+    
+    if (timelineItems.length > 0 && timelineProgress) {
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Update progress line height based on the lowest active item
+                    const activeItems = document.querySelectorAll('.timeline-item.active');
+                    if (activeItems.length > 0) {
+                        const lastActive = activeItems[activeItems.length - 1];
+                        const progressHeight = lastActive.offsetTop + 20; // 20px is top offset of dot
+                        timelineProgress.style.height = `${progressHeight}px`;
+                    }
+                }
+            });
+        }, { root: null, threshold: 0.2, rootMargin: '0px 0px -100px 0px' });
+
+        timelineItems.forEach(item => {
+            timelineObserver.observe(item);
+        });
+    }
 });
