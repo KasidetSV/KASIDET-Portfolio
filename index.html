@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="blueprint-bg"></div>
     <div class="bg-aura"></div>
 
     <!-- Navigation Header -->
@@ -30,6 +31,16 @@
     <main class="container">
         <!-- Hero Section -->
         <section id="hero" class="hero">
+            <!-- Decorative Drawing SVG Blueprint Wireframe -->
+            <div class="hero-blueprint-decor">
+                <svg width="100%" height="100%" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="svg-circle" cx="200" cy="200" r="180" stroke="#00FF66" stroke-width="1.5" stroke-opacity="0.15" stroke-dasharray="10 5"/>
+                    <line class="svg-line" x1="200" y1="0" x2="200" y2="400" stroke="#00FF66" stroke-width="0.5" stroke-opacity="0.1"/>
+                    <line class="svg-line" x1="0" y1="200" x2="400" y2="200" stroke="#00FF66" stroke-width="0.5" stroke-opacity="0.1"/>
+                    <rect class="svg-rect" x="50" y="50" width="300" height="300" stroke="#1F293D" stroke-width="1" stroke-opacity="0.4"/>
+                    <path class="svg-path-draw" d="M 200,20 L 380,200 L 200,380 L 20,200 Z" stroke="#00FF66" stroke-width="1.5" stroke-opacity="0.3"/>
+                </svg>
+            </div>
             <div class="hero-grid">
                 <div class="hero-content">
                     <div class="system-status-pill">

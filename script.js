@@ -103,4 +103,25 @@ document.addEventListener('DOMContentLoaded', () => {
             efficiencyElement.textContent = `${efficiencyVal}%`;
         }, 8000);
     }
+
+    // 4. Section Line Self-Drawing Animation using Intersection Observer
+    const sectionLines = document.querySelectorAll('.section-line');
+    const observerOptions = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target); // Trigger only once
+            }
+        });
+    }, observerOptions);
+
+    sectionLines.forEach(line => {
+        observer.observe(line);
+    });
 });
