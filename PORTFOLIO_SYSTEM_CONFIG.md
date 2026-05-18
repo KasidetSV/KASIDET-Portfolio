@@ -45,4 +45,18 @@ If you need to execute structural updates locally:
     ```
 
 ---
+
+## 🟢 Daily Green Heatmap Command (Commit Progress)
+
+To build a consistent profile calendar and track active learning, trigger this command at the end of your session with the AI Agent:
+
+> **Prompt to Use:** `"COGNOS: Commit today's diary and push to GitHub."`
+
+The AI will automatically:
+1. Scan for newly modified portfolio files or private journal entries.
+2. Stage and commit them locally under anti-drift safeguards.
+3. Push to your linked GitHub remote.
+4. Instantly log a fresh active contribution to your public heatmap profile calendar.
+
+---
 *Maintained securely under the COGNOS Autonomous System.*
