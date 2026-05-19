@@ -87,7 +87,7 @@ export default function Terminal() {
   const currentData = REGIME_DATA[selectedRegime];
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 py-8">
+    <div className="w-full h-full">
       <div className="glass-card rounded-lg overflow-hidden border border-white/5 shadow-2xl crt-panel">
         
         {/* Terminal Header */}
@@ -191,6 +191,6 @@ export default function Terminal() {
 
         </div>
       </div>
-    </section>
+    </div>
   );
 }

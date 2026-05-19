@@ -11,10 +11,10 @@ export default {
         mono: ['Share Tech Mono', 'monospace'],
       },
       colors: {
-        background: '#050811',
+        background: '#0B0F19',
         foreground: '#e2e8f0',
         primary: {
-          DEFAULT: '#00FF66',
+          DEFAULT: '#00FFA3',
           foreground: '#000000',
         },
         destructive: {
@@ -22,7 +22,7 @@ export default {
           foreground: '#ffffff',
         },
         card: {
-          DEFAULT: 'rgba(10, 15, 30, 0.7)',
+          DEFAULT: 'rgba(11, 15, 25, 0.75)',
           foreground: '#e2e8f0',
         },
         border: 'rgba(255, 255, 255, 0.05)',

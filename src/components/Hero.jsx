@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Hero() {
   return (
-    <section className="relative w-full max-w-7xl mx-auto px-6 pt-16 pb-8 flex flex-col items-start gap-6">
+    <section className="relative w-full max-w-7xl mx-auto px-6 py-20 flex flex-col items-start gap-6">
       {/* HUD Accent Top */}
       <div className="font-mono text-xs text-primary/75 tracking-widest uppercase">
         // PROTOCOL INITIATED // IDENTITY BLOCK ACTIVE
@@ -10,10 +10,10 @@ export default function Hero() {
 
       {/* Main Title & Subtitle */}
       <div className="space-y-4">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white leading-none">
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-white uppercase leading-none">
           KASIDET SIRIVIROTSAKUL
         </h1>
-        <h2 className="text-lg md:text-2xl font-medium tracking-tight text-primary font-mono uppercase">
+        <h2 className="text-base md:text-xl font-mono text-primary uppercase tracking-widest">
           AI-Powered Investment Specialist & Systems Architect
         </h2>
       </div>

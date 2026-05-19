@@ -43,7 +43,7 @@ export default function CaseStudies() {
   const currentStudy = CASE_STUDIES.find(s => s.id === activeTab);
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 py-12 space-y-12">
+    <section className="w-full max-w-7xl mx-auto px-6 py-20 space-y-12">
       <div className="space-y-2">
         <h3 className="font-mono text-xs text-primary uppercase tracking-widest">// DEEP DIVE RESEARCH</h3>
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white">Green Park 1 Case Study</h2>
@@ -69,7 +69,7 @@ export default function CaseStudies() {
         </div>
 
         {/* Right Side: Tab Details Display */}
-        <div className="lg:col-span-8 glass-card p-8 rounded-lg space-y-6 min-h-[300px] flex flex-col justify-between border border-white/5">
+        <div className="lg:col-span-8 glass-card bento-card p-8 rounded-lg space-y-6 min-h-[300px] flex flex-col justify-between border border-white/5">
           <div className="space-y-4">
             <span className="font-mono text-xs text-primary/70 tracking-widest uppercase">// RESEARCH SEGMENT</span>
             <h3 className="text-lg md:text-xl font-bold text-white tracking-tight leading-tight">

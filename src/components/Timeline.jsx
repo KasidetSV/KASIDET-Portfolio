@@ -23,7 +23,7 @@ const TIMELINE_DATA = [
 
 export default function Timeline() {
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 py-12 space-y-12">
+    <div className="w-full h-full space-y-8">
       <div className="space-y-2">
         <h3 className="font-mono text-xs text-primary uppercase tracking-widest">// SYSTEM EVOLUTION</h3>
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white">Chronological Milestones</h2>
@@ -33,13 +33,13 @@ export default function Timeline() {
         {TIMELINE_DATA.map((item, index) => (
           <div key={index} className="relative group">
             {/* Pulsing indicator node */}
-            <span className="absolute -left-[31px] md:-left-[39px] top-1.5 flex h-4 w-4 items-center justify-center bg-[#050811]">
+            <span className="absolute -left-[31px] md:-left-[39px] top-1.5 flex h-4 w-4 items-center justify-center bg-[#0B0F19]">
               <span className="animate-ping absolute inline-flex h-2.5 w-2.5 rounded-full bg-primary opacity-40 group-hover:opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
 
             {/* Content card */}
-            <div className="glass-card glass-card-hover p-6 rounded-lg space-y-3">
+            <div className="glass-card bento-card p-6 rounded-lg space-y-3">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 font-mono">
                 <span className="text-[10px] md:text-xs text-primary font-bold px-2 py-0.5 rounded bg-primary/10 tracking-widest uppercase">
                   {item.date}
@@ -56,6 +56,6 @@ export default function Timeline() {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
