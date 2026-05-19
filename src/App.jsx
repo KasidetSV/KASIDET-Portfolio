@@ -5,11 +5,15 @@ import Terminal from './components/Terminal';
 import Timeline from './components/Timeline';
 import CaseStudies from './components/CaseStudies';
 import InteractiveBackground from './components/InteractiveBackground';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
     <div className="relative flex flex-col min-h-screen">
-      {/* 1. HTML5 Canvas Mouse-Tracking Dynamic Gradient Background */}
+      {/* 1. Real-Time Vercel Recruiter Tracking Engine */}
+      <Analytics />
+
+      {/* 2. HTML5 Canvas Mouse-Tracking Dynamic Gradient Background */}
       <InteractiveBackground />
 
       {/* 2. Real-Time Status Header */}
