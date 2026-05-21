@@ -42,13 +42,13 @@ export default function InteractiveBackground() {
       mouse.y += (targetMouse.y - mouse.y) * 0.04;
 
       // Clear the background to dark slate
-      ctx.fillStyle = '#0B0F19';
+      ctx.fillStyle = '#060608';
       ctx.fillRect(0, 0, width, height);
 
       // Draw subtle grid lines (Open Design spec)
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.015)';
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.012)';
       ctx.lineWidth = 1;
-      const gridSize = 40;
+      const gridSize = 48;
       for (let x = 0; x < width; x += gridSize) {
         ctx.beginPath();
         ctx.moveTo(x, 0);
@@ -62,30 +62,30 @@ export default function InteractiveBackground() {
         ctx.stroke();
       }
 
-      // 1. Mouse Warp Gradient (Teal Accent)
+      // 1. Mouse Warp Gradient (Coral-Amber Dusk Glow)
       const mouseGradSize = Math.max(width, height) * 0.45;
       const mouseGradient = ctx.createRadialGradient(
         mouse.x, mouse.y, 10,
         mouse.x, mouse.y, mouseGradSize
       );
-      mouseGradient.addColorStop(0, 'rgba(0, 255, 163, 0.09)');
-      mouseGradient.addColorStop(0.3, 'rgba(0, 255, 163, 0.03)');
-      mouseGradient.addColorStop(1, 'rgba(11, 15, 25, 0)');
+      mouseGradient.addColorStop(0, 'rgba(204, 120, 92, 0.07)'); // Coral base glow
+      mouseGradient.addColorStop(0.3, 'rgba(232, 165, 90, 0.02)'); // Sunset Amber fade
+      mouseGradient.addColorStop(1, 'rgba(6, 6, 8, 0)');
 
       ctx.fillStyle = mouseGradient;
       ctx.fillRect(0, 0, width, height);
 
-      // 2. Slow Ambient Floating Gradient (Purple/Blue Tone in Background)
-      const driftX = width * 0.7 + Math.sin(tick) * 100;
-      const driftY = height * 0.3 + Math.cos(tick * 0.8) * 100;
-      const ambientGradSize = Math.max(width, height) * 0.5;
+      // 2. Slow Ambient Floating Gradient (Cosmic Purple/Magenta Tone in Background)
+      const driftX = width * 0.75 + Math.sin(tick) * 120;
+      const driftY = height * 0.25 + Math.cos(tick * 0.8) * 120;
+      const ambientGradSize = Math.max(width, height) * 0.55;
       const ambientGradient = ctx.createRadialGradient(
         driftX, driftY, 50,
         driftX, driftY, ambientGradSize
       );
-      ambientGradient.addColorStop(0, 'rgba(170, 59, 255, 0.03)');
-      ambientGradient.addColorStop(0.5, 'rgba(170, 59, 255, 0.01)');
-      ambientGradient.addColorStop(1, 'rgba(11, 15, 25, 0)');
+      ambientGradient.addColorStop(0, 'rgba(154, 82, 142, 0.03)'); // Cosmic Purple
+      ambientGradient.addColorStop(0.5, 'rgba(154, 82, 142, 0.01)');
+      ambientGradient.addColorStop(1, 'rgba(6, 6, 8, 0)');
 
       ctx.fillStyle = ambientGradient;
       ctx.fillRect(0, 0, width, height);

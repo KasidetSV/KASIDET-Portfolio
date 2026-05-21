@@ -45,22 +45,22 @@ export default function CaseStudies() {
   return (
     <section className="w-full max-w-7xl mx-auto px-6 py-20 space-y-12">
       <div className="space-y-2">
-        <h3 className="font-mono text-xs text-primary uppercase tracking-widest">// DEEP DIVE RESEARCH</h3>
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white">Green Park 1 Case Study</h2>
+        <h3 className="font-mono text-[10px] text-coral tracking-[0.2em] uppercase font-bold">// DEEP DIVE RESEARCH</h3>
+        <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white uppercase">Green Park 1 Case Study</h2>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         {/* Left Side: Vertical Tabs */}
-        <div className="lg:col-span-4 flex flex-col gap-2">
+        <div className="lg:col-span-4 flex flex-col gap-2.5">
           {CASE_STUDIES.map((study) => (
             <button
               key={study.id}
               onClick={() => setActiveTab(study.id)}
-              className={`w-full text-left p-4 font-mono text-xs rounded transition-all duration-200 border uppercase tracking-wider ${
+              className={`w-full text-left p-4 font-mono text-xs rounded-xl transition-all duration-300 border uppercase tracking-wider ${
                 activeTab === study.id
-                  ? 'bg-primary/10 border-primary text-primary font-bold'
-                  : 'bg-white/5 border-white/5 text-gray-400 hover:bg-white/10'
+                  ? 'bg-amber/10 border-amber text-amber font-bold border-glow-sunset scale-[1.01]'
+                  : 'bg-white/[0.02] border-white/5 text-gray-400 hover:bg-white/5 hover:border-white/10 hover:text-white'
               }`}
             >
               {study.label}
@@ -69,24 +69,24 @@ export default function CaseStudies() {
         </div>
 
         {/* Right Side: Tab Details Display */}
-        <div className="lg:col-span-8 glass-card bento-card p-8 rounded-lg space-y-6 min-h-[300px] flex flex-col justify-between border border-white/5">
+        <div className="lg:col-span-8 glass-card bento-card p-8 rounded-2xl space-y-6 min-h-[300px] flex flex-col justify-between border border-white/10 shadow-[0_16px_48px_rgba(0,0,0,0.4)] hover:border-coral/20">
           <div className="space-y-4">
-            <span className="font-mono text-xs text-primary/70 tracking-widest uppercase">// RESEARCH SEGMENT</span>
+            <span className="font-mono text-[10px] text-coral/80 tracking-widest font-semibold uppercase">// RESEARCH SEGMENT</span>
             <h3 className="text-lg md:text-xl font-bold text-white tracking-tight leading-tight">
               {currentStudy.title}
             </h3>
-            <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
+            <p className="text-xs md:text-sm font-serif italic text-gray-300 leading-relaxed pl-3 border-l border-white/5">
               {currentStudy.description}
             </p>
           </div>
 
-          <div className="space-y-3 pt-4 border-t border-white/5">
-            <h4 className="font-mono text-xs text-gray-500 uppercase tracking-widest">// CORE TAKEAWAYS</h4>
-            <ul className="space-y-2 text-xs md:text-sm text-gray-300">
+          <div className="space-y-3.5 pt-5 border-t border-white/10">
+            <h4 className="font-mono text-[10px] text-gray-500 uppercase tracking-[0.2em] font-semibold">// CORE TAKEAWAYS</h4>
+            <ul className="space-y-3.5 text-xs md:text-sm text-gray-300">
               {currentStudy.bullets.map((bullet, idx) => (
-                <li key={idx} className="flex items-start gap-2">
-                  <span className="text-primary font-bold font-mono">■</span>
-                  <span>{bullet}</span>
+                <li key={idx} className="flex items-start gap-2.5">
+                  <span className="text-amber font-bold font-mono text-xs mt-0.5">■</span>
+                  <span className="text-gray-300">{bullet}</span>
                 </li>
               ))}
             </ul>

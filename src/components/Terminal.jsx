@@ -88,28 +88,28 @@ export default function Terminal() {
 
   return (
     <div className="w-full h-full">
-      <div className="glass-card rounded-lg overflow-hidden border border-white/5 shadow-2xl crt-panel">
+      <div className="glass-card rounded-2xl overflow-hidden border border-white/10 shadow-[0_16px_48px_rgba(0,0,0,0.5)] crt-panel">
         
         {/* Terminal Header */}
-        <div className="bg-[#0b0e14] px-4 py-3 border-b border-white/5 flex justify-between items-center">
+        <div className="bg-[#0b0e14]/90 px-5 py-3.5 border-b border-white/10 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-destructive/70"></span>
-            <span className="w-3 h-3 rounded-full bg-yellow-500/70"></span>
-            <span className="w-3 h-3 rounded-full bg-primary/70"></span>
-            <span className="font-mono text-xs text-gray-500 ml-2">quant_terminal@kasidet: ~</span>
+            <span className="w-2.5 h-2.5 rounded-full bg-coral/80 animate-pulse"></span>
+            <span className="w-2.5 h-2.5 rounded-full bg-amber/80"></span>
+            <span className="w-2.5 h-2.5 rounded-full bg-purple/80"></span>
+            <span className="font-mono text-xs text-white/50 ml-2 tracking-wide">quant_terminal@kasidet: ~</span>
           </div>
-          <div className="font-mono text-xs text-primary/75">
+          <div className="font-mono text-xs text-amber font-semibold tracking-widest">
             [SRI TARGET: 12.0%]
           </div>
         </div>
 
         {/* Terminal Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[420px] bg-[#07090e]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[420px] bg-[#07090e]/95">
           
           {/* Left panel: simulator controls & indicators */}
-          <div className="lg:col-span-5 p-6 border-r border-white/5 flex flex-col justify-between gap-6">
+          <div className="lg:col-span-5 p-6 border-r border-white/10 flex flex-col justify-between gap-6">
             <div className="space-y-4">
-              <h3 className="font-mono text-xs text-gray-500 uppercase tracking-widest">// SELECT ECONOMIC REGIME</h3>
+              <h3 className="font-mono text-[10px] text-gray-500 uppercase tracking-[0.2em] font-semibold">// SELECT ECONOMIC REGIME</h3>
               <div className="grid grid-cols-2 gap-2">
                 {Object.keys(REGIME_DATA).map((regime) => (
                   <button
@@ -118,10 +118,10 @@ export default function Terminal() {
                       setSelectedRegime(regime);
                       setActiveTab('simulator');
                     }}
-                    className={`px-4 py-2 font-mono text-xs font-semibold rounded transition-all duration-200 border uppercase tracking-wider ${
+                    className={`px-3 py-2.5 font-mono text-xs font-semibold rounded-lg transition-all duration-300 border uppercase tracking-wider ${
                       selectedRegime === regime && activeTab === 'simulator'
-                        ? 'bg-primary/10 border-primary text-primary'
-                        : 'bg-white/5 border-white/5 text-gray-400 hover:bg-white/10'
+                        ? 'bg-amber/10 border-amber text-amber border-glow-sunset font-bold scale-[1.02]'
+                        : 'bg-white/[0.02] border-white/5 text-gray-400 hover:bg-white/5 hover:border-white/10'
                     }`}
                   >
                     {regime}
@@ -133,21 +133,21 @@ export default function Terminal() {
             {/* Asset Allocation Weights display */}
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <h3 className="font-mono text-xs text-gray-500 uppercase tracking-widest">// OPTIMIZED WEIGHTS</h3>
-                <span className="font-mono text-xs text-primary font-bold">
+                <h3 className="font-mono text-[10px] text-gray-500 uppercase tracking-[0.2em] font-semibold">// OPTIMIZED WEIGHTS</h3>
+                <span className="font-mono text-xs text-amber font-bold">
                   VaR: {(currentData.optimizedVar * 100).toFixed(2)}%
                 </span>
               </div>
-              <div className="space-y-3 font-mono text-xs">
+              <div className="space-y-3.5 font-mono text-[11px]">
                 {Object.entries(currentData.optWeights).map(([asset, weight]) => (
                   <div key={asset} className="space-y-1">
                     <div className="flex justify-between text-gray-400">
-                      <span>{asset.replace('_', ' ')}</span>
-                      <span className="text-white">{(weight * 100).toFixed(0)}%</span>
+                      <span className="tracking-wide">{asset.replace('_', ' ')}</span>
+                      <span className="text-white font-semibold">{(weight * 100).toFixed(0)}%</span>
                     </div>
-                    <div className="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
+                    <div className="w-full bg-white/[0.04] rounded-full h-1.5 overflow-hidden border border-white/[0.02]">
                       <div 
-                        className="bg-primary h-full rounded-full transition-all duration-500 ease-out" 
+                        className="bg-gradient-to-r from-coral to-amber h-full rounded-full transition-all duration-500 ease-out" 
                         style={{ width: `${weight * 100}%` }}
                       ></div>
                     </div>
@@ -159,10 +159,10 @@ export default function Terminal() {
             {/* System Actions */}
             <button
               onClick={triggerAuditDiagnostic}
-              className={`w-full py-2.5 rounded font-mono text-xs font-bold tracking-widest uppercase transition-all duration-200 border ${
+              className={`w-full py-3 rounded-lg font-mono text-xs font-bold tracking-widest uppercase transition-all duration-300 border ${
                 activeTab === 'audit'
-                  ? 'bg-destructive/10 border-destructive text-destructive border-glow-crimson'
-                  : 'bg-white/5 border-white/5 text-gray-400 hover:bg-white/10'
+                  ? 'bg-coral/10 border-coral text-coral border-glow-coral'
+                  : 'bg-white/[0.02] border-white/5 text-gray-400 hover:bg-white/5 hover:border-coral/50'
               }`}
             >
               RUN COGNOS AUDIT DIAGNOSTIC
@@ -170,22 +170,30 @@ export default function Terminal() {
           </div>
 
           {/* Right panel: Terminal data stream output */}
-          <div className="lg:col-span-7 p-6 bg-[#040609] flex flex-col justify-between font-mono text-xs text-gray-300">
+          <div className="lg:col-span-7 p-6 bg-[#040609]/95 flex flex-col justify-between font-mono text-xs text-gray-300">
             <div className="space-y-3 leading-relaxed">
-              <div className="text-gray-500">// ACTIVE STREAM DATA</div>
-              {consoleLogs.map((log, idx) => (
-                <div key={idx} className="flex gap-2 items-start">
-                  <span className="text-primary font-bold">{`>`}</span>
-                  <span className={log.startsWith('>>') ? 'text-destructive font-semibold' : ''}>
-                    {log}
-                  </span>
-                </div>
-              ))}
+              <div className="text-gray-500 font-semibold tracking-wider flex items-center gap-1.5">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber animate-pulse"></span>
+                // ACTIVE STREAM DATA
+              </div>
+              <div className="space-y-2 mt-2">
+                {consoleLogs.map((log, idx) => (
+                  <div key={idx} className="flex gap-2 items-start text-[11px]">
+                    <span className="text-coral font-bold">{`>`}</span>
+                    <span className={log.startsWith('>>') ? 'text-destructive font-semibold' : 'text-gray-300'}>
+                      {log}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="border-t border-white/5 pt-4 mt-6 flex justify-between items-center text-[10px] text-gray-500">
-              <div>HOST INTERNET: SECURED</div>
-              <div className="animate-pulse">● RECORDING TERMINAL STREAM</div>
+            <div className="border-t border-white/5 pt-4 mt-6 flex justify-between items-center text-[9px] text-gray-500 tracking-wider">
+              <div>HOST CONNECTION: SECURED // MFC LAYER</div>
+              <div className="flex items-center gap-1.5 text-coral font-medium animate-pulse">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-coral"></span>
+                ● RECORDING TERMINAL STREAM
+              </div>
             </div>
           </div>
 
