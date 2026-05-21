@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: 
+      radial-gradient(rgba(0, 255, 102, 0.04) 1px, transparent 1px),
+      radial-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans tracking-tight;
+  }
+  
+  .font-mono {
+    font-family: 'Share Tech Mono', monospace;
+  }
+}
+
+@layer utilities {
+  /* Neon glow utility borders */
+  .border-glow-green {
+    box-shadow: 0 0 10px rgba(0, 255, 163, 0.15), inset 0 0 10px rgba(0, 255, 163, 0.05);
+    border: 1px solid rgba(0, 255, 163, 0.25);
+  }
+
+  .border-glow-crimson {
+    box-shadow: 0 0 10px rgba(255, 62, 85, 0.15), inset 0 0 10px rgba(255, 62, 85, 0.05);
+    border: 1px solid rgba(255, 62, 85, 0.25);
+  }
+
+  /* Glassmorphism utility */
+  .glass-card {
+    background: rgba(11, 15, 25, 0.7);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Bento Layout transitions */
+  .bento-card {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .bento-card:hover {
+    transform: scale(1.012);
+    border-color: rgba(0, 255, 163, 0.35);
+    box-shadow: 0 12px 30px -10px rgba(0, 255, 163, 0.12);
+  }
+
+  /* Subtle CRT Scanline effect for terminal panels */
+  .crt-panel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .crt-panel::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    aspect-ratio: auto;
+    background-size: 100% 4px, 6px 100%;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.15;
+  }
+}
