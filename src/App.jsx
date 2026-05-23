@@ -1,4 +1,3 @@
-import React from 'react';
 import HUD from './components/HUD';
 import Hero from './components/Hero';
 import Terminal from './components/Terminal';

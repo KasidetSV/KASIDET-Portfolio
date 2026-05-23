@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const REGIME_DATA = {
   Growth: {
@@ -63,13 +63,8 @@ const REGIME_DATA = {
 
 export default function Terminal() {
   const [selectedRegime, setSelectedRegime] = useState('Growth');
-  const [consoleLogs, setConsoleLogs] = useState([]);
+  const [consoleLogs, setConsoleLogs] = useState(REGIME_DATA.Growth.log);
   const [activeTab, setActiveTab] = useState('simulator'); // 'simulator' or 'audit'
-
-  useEffect(() => {
-    // Reload logs whenever the regime shifts
-    setConsoleLogs(REGIME_DATA[selectedRegime].log);
-  }, [selectedRegime]);
 
   const triggerAuditDiagnostic = () => {
     setActiveTab('audit');
@@ -116,6 +111,7 @@ export default function Terminal() {
                     key={regime}
                     onClick={() => {
                       setSelectedRegime(regime);
+                      setConsoleLogs(REGIME_DATA[regime].log);
                       setActiveTab('simulator');
                     }}
                     className={`px-3 py-2.5 font-mono text-xs font-semibold rounded-lg transition-all duration-300 border uppercase tracking-wider ${
