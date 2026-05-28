@@ -1,6 +1,7 @@
 import HUD from './components/HUD';
 import Hero from './components/Hero';
 import Terminal from './components/Terminal';
+import SwarmOrchestrator from './components/SwarmOrchestrator';
 import Timeline from './components/Timeline';
 import CaseStudies from './components/CaseStudies';
 import InteractiveBackground from './components/InteractiveBackground';
@@ -27,8 +28,9 @@ function App() {
         {/* 4. Bento Grid Layout Section (Asymmetric columns) */}
         <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Left Column: Interactive Quant Console (Large Asymmetric Bento) */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 flex flex-col gap-8">
             <Terminal />
+            <SwarmOrchestrator />
           </div>
           
           {/* Right Column: Chronological Evolution (Compact Asymmetric Bento) */}
